@@ -1,23 +1,23 @@
+#!/usr/bin/env python
+'''
+    File name: Assign2.py
+    Author: Siddhant Kumar
+    Email: saytosid@gmail.com
+    Date created: 1 Oct 2017
+    Date last modified: 1 Oct 2017
+    Python Version: 3.0
+'''
+
 from framework import Board,Game,Player
 import numpy as np
+from MyPlayer import MyPlayer
+from OtherPlayer import OtherPlayer
 np.set_printoptions(suppress=True)
 
-class MyPlayer(Player):
-
-    def __init__(self):
-        pass
-
-    def get_move(self,board):
-        '''
-        :param board: Board object
-        :return: (piece,new_position,BoardLeavingMove)
-        '''
-        moves = board.get_valid_moves()
-        return moves[0]
 
 if __name__=='__main__':
     board = Board(size=5)
-    player_1 = Player() # Random player
+    player_1 = OtherPlayer() # Random player
     player_2 = MyPlayer() # MyPlayer
 
     game = Game(board,player_1,player_2)
