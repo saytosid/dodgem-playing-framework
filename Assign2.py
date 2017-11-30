@@ -21,7 +21,7 @@ def run_game(player_1,player_2,max_num_moves,board_size=5):
     while (moves < max_num_moves):
         moves += 1
         if game.step()==1:
-            print "Game Over, {} Lost".format(game.loser)
+            print ("Game Over, {} Lost".format(game.loser))
             return "Loser: {}".format(game.loser)
         board_matrix,turn = board.get_board_config()
         print(board_matrix)
@@ -34,5 +34,5 @@ if __name__=='__main__':
     player_1 = OtherPlayer() # Random player
     player_2 = MyPlayer() # MyPlayer
     return_str = run_game(player_1,player_2,50)
-    print "Script returned: '{}'".format(return_str)
+    print ("Script returned: '{}'".format(return_str))
 
