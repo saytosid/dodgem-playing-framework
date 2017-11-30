@@ -19,6 +19,7 @@ class Game:
         '''
         self.player_1 = player_1
         self.player_2 = player_2
+        self.loser = None
         self.board = board
         self.mov_ctr = 0
         self.game_over = False
@@ -35,12 +36,14 @@ class Game:
             if status == 'lost':
                 print('Player_'+str(extra_info)+' Lost')
                 self.game_over = True
+                self.loser = 'Player_'+str(extra_info)
             self.board.turn = 2
         else:
             status,extra_info = self.board.make_move(self.player_2.get_move(self.board))
             if status == 'lost':
                 print('Player_'+str(extra_info)+' Lost')
                 self.game_over = True
+                self.loser = 'Player_'+str(extra_info)
             self.board.turn = 1
 
         self.mov_ctr += 1
